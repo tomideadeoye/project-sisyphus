@@ -1,11 +1,10 @@
-# Math Solver by Tomide Adeoye
+# Sisyphus by TOMIDE
 
-Visit the https://mathcsolvetom.netlify.app/ and type in your questions!
-You could start with: 2x + 3x = 35
 
-https://user-images.githubusercontent.com/55337742/227046491-9e8cdf59-dafc-42f1-aacc-82a8dbd13015.mp4
+https://user-images.githubusercontent.com/55337742/235377895-5d219784-bd2a-47fc-8fa6-d349ce06fb22.mp4
 
-Built with React, mathsteps and MUI. Jest for Testing.
+
+
 
 Tomide Adeoye.
 M: +234 818 192 7251
