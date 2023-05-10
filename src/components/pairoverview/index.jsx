@@ -27,12 +27,10 @@ export function PairOverview() {
 			<Stack
 				direction={"row"}
 				justifyContent="space-between"
-				width="100%"
-				alignItems="center"
+				alignItems="right"
 				spacing={3}
 				divider={<Divider orientation="vertical" flexItem color="primary" />}
 				sx={{
-					background: (theme) => theme.palette.primary.background,
 					borderColor: (theme) => `1px solid ${theme.palette.primary.border}`,
 				}}
 			>
@@ -50,12 +48,9 @@ const SelectPair = ({ pair, handleChange }) => {
 
 	return (
 		<Stack
-			alignItems="center"
-			direction="row"
+			alignItems={{ xs: "flex-start", sm: "flex-start" }}
+			direction={{ xs: "column", sm: "row" }}
 			spacing={2}
-			sx={{
-				width: "100%",
-			}}
 			divider={
 				<Divider
 					orientation="vertical"

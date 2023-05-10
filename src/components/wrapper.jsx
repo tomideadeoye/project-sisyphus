@@ -9,8 +9,6 @@ export default function Wrapper({ children }) {
 		<Box>
 			<Stack
 				justifyContent="space-between"
-				width="100%"
-				alignItems="center"
 				p={2}
 				sx={{
 					background: (theme) => theme.palette.primary.background,

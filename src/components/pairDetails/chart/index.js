@@ -6,6 +6,7 @@ import { Box } from "@mui/material";
 import { AppContext } from "../../../utils/context";
 import { timeParse } from "d3-time-format";
 import moment from "moment/moment";
+import Wrapper from "../../wrapper";
 
 const parseEpoch = (epoch) => {
 	let date = new Date(epoch);
@@ -52,7 +53,17 @@ const ChartComponent = () => {
 	if (data == null) {
 		return <div>Loading...</div>;
 	}
-	return <Box width="100%">{data && <Chart data={data} />}</Box>;
+	return (
+		<Box
+			width={{
+				lg: "70%",
+				md: "100%",
+			}}
+		>
+			{" "}
+			<Wrapper>{data && <Chart data={data} />}</Wrapper>
+		</Box>
+	);
 };
 
 export default ChartComponent;

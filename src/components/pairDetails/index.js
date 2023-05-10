@@ -1,29 +1,20 @@
 import React from "react";
-import Wrapper from "../wrapper";
-import { Grid } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import ChartComponent from "./chart";
 import OrderBookRecentTrades from "./orderBookRecentTrades";
 import BuySell from "./BuySell";
 
 export function PairDetails() {
 	return (
-		<Grid container spacing={1}>
-			<Grid item md={12} lg={8}>
-				<Wrapper>
-					<ChartComponent />
-				</Wrapper>
-			</Grid>
-			<Grid item md={12} lg={2}>
-				<Wrapper>
-					<OrderBookRecentTrades />
-				</Wrapper>
-			</Grid>
-
-			<Grid item md={12} lg={2}>
-				<Wrapper>
-					<BuySell />
-				</Wrapper>
-			</Grid>
-		</Grid>
+		<Stack
+			direction={{ sm: "column", md: "row" }}
+			spacing={{ sm: 2, md: 1 }}
+			sx={{ width: "100%", height: "100%", padding: "0px 10px" }}
+			justifyContent="space-between"
+		>
+			<ChartComponent />
+			<OrderBookRecentTrades />
+			<BuySell />
+		</Stack>
 	);
 }

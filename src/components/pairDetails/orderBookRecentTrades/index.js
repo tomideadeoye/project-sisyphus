@@ -12,6 +12,7 @@ import { MenuItem, Select, Stack } from "@mui/material";
 import TableRowsIcon from "@mui/icons-material/TableRows";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
+import Wrapper from "../../wrapper";
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -68,73 +69,79 @@ export default function OrderBookRecentTrades() {
 	return (
 		<Box
 			sx={{
+				width: {
+					md: "100%",
+					lg: "20%",
+				},
 				background: (theme) => theme.palette.primary.background,
 				color: (theme) => theme.palette.primary.main,
 				fontSize: (theme) => theme.typography.body1,
 			}}
 		>
-			<AppBar
-				position="static"
-				sx={{
-					borderRadius: (theme) => theme.spacing(2),
-					background: (theme) => theme.palette.primary.background,
-				}}
-			>
-				<Tabs
-					value={value}
-					onChange={handleChange}
-					indicatorColor={(theme) => theme.palette.secondary.main}
-					variant="fullWidth"
-					aria-label="full width tabs example"
+			<Wrapper>
+				<AppBar
+					position="static"
 					sx={{
-						// background: (theme) => theme.palette.primary.background,
-						fontSize: (theme) => theme.typography.body1,
+						borderRadius: (theme) => theme.spacing(2),
+						background: (theme) => theme.palette.primary.background,
 					}}
 				>
-					<Tab
-						label="Order Book"
-						{...a11yProps(0)}
+					<Tabs
+						value={value}
+						onChange={handleChange}
+						indicatorColor={(theme) => theme.palette.secondary.main}
+						variant="fullWidth"
+						aria-label="full width tabs example"
 						sx={{
-							color: (theme) => theme.palette.primary.main,
+							// background: (theme) => theme.palette.primary.background,
 							fontSize: (theme) => theme.typography.body1,
 						}}
-					/>
-					<Tab
-						label="Recent Trades"
-						{...a11yProps(1)}
-						sx={{
-							color: (theme) => theme.palette.primary.main,
-							fontSize: (theme) => theme.typography.body1,
-						}}
-					/>
-				</Tabs>
-			</AppBar>
-			<Stack
-				direction="row"
-				justifyContent="space-between"
-				alignItems="center"
-				padding={(theme) => theme.spacing(2)}
-			>
-				<Stack direction="row">
-					<TableRowsIcon fontSize="small" />
-					<TableRowsIcon fontSize="small" />
-					<TableRowsIcon fontSize="small" />
-				</Stack>
+					>
+						<Tab
+							label="Order Book"
+							{...a11yProps(0)}
+							sx={{
+								color: (theme) => theme.palette.primary.main,
+								fontSize: (theme) => theme.typography.body1,
+							}}
+						/>
+						<Tab
+							label="Recent Trades"
+							{...a11yProps(1)}
+							sx={{
+								color: (theme) => theme.palette.primary.main,
+								fontSize: (theme) => theme.typography.body1,
+							}}
+						/>
+					</Tabs>
+				</AppBar>
+				<Stack
+					direction="row"
+					justifyContent="space-between"
+					alignItems="center"
+					padding={(theme) => theme.spacing(2)}
+				>
+					<Stack direction="row">
+						<TableRowsIcon fontSize="small" />
+						<TableRowsIcon fontSize="small" />
+						<TableRowsIcon fontSize="small" />
+					</Stack>
 
-				{MUISelect(handleQueryChange, query)}
-			</Stack>
-			<SwipeableViews
-				axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-				index={value}
-				onChangeIndex={handleChangeIndex}
-			>
-				<TabPanel value={value} index={0} dir={theme.direction}>
-					<DataTable query={query} />
-				</TabPanel>
-				<TabPanel value={value} index={1} dir={theme.direction}>
-					No recent trades
-				</TabPanel>
-			</SwipeableViews>
+					{MUISelect(handleQueryChange, query)}
+				</Stack>
+				<SwipeableViews
+					axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+					index={value}
+					onChangeIndex={handleChangeIndex}
+				>
+					<TabPanel value={value} index={0} dir={theme.direction}>
+						<DataTable query={query} />
+					</TabPanel>
+					<TabPanel value={value} index={1} dir={theme.direction}>
+						No recent trades
+					</TabPanel>
+				</SwipeableViews>
+			</Wrapper>
 		</Box>
 	);
 }

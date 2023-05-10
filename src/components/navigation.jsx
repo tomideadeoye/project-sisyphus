@@ -65,9 +65,8 @@ export const navItems = [
 export default function Navigation() {
 	return (
 		<Stack
-			direction="row"
+			direction={{ xs: "column", sm: "row" }}
 			justifyContent="space-between"
-			width="100%"
 			alignItems="center"
 			spacing={3}
 			sx={{

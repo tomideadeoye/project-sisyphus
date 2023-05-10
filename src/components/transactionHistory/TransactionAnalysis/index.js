@@ -64,7 +64,7 @@ export default function TransactionAnalysis() {
 
 	return (
 		<Box
-			width="100%"
+			// width="100%"
 			sx={{
 				background: (theme) => theme.palette.primary.background,
 				color: (theme) => theme.palette.primary.main,
