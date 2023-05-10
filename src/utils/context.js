@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { createContext, useMemo, useState, useEffect } from "react";
-const axios = require("axios");
+import axios from "axios";
 
 // create the context
 export const AppContext = createContext();
