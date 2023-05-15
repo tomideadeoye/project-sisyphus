@@ -18,6 +18,7 @@ import {
 	Stack,
 	TextField,
 	styled,
+	useMediaQuery,
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
@@ -88,6 +89,8 @@ export default function BuySell() {
 	const channels = ["Buy", "Sell"];
 	const options = ["Limit", "Market", "Stop Limit"];
 	const textInput = ["Limit Price", "Amount", "Type"];
+
+	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
 	return (
 		<Box
@@ -304,6 +307,36 @@ export default function BuySell() {
 						No recent trades
 					</TabPanel>
 				</SwipeableViews>
+				{isMobile && (
+					<Stack
+						direction="row"
+						alignContent="center"
+						justifyContent="space-between"
+						spacing={3}
+					>
+						<Button
+							fullWidth
+							variant="contained"
+							sx={{
+								background: "green",
+								color: "white",
+								fontSize: (theme) => theme.typography.body1,
+							}}
+						>
+							Buy
+						</Button>
+						<Button
+							fullWidth
+							sx={{
+								background: "red",
+								color: "white",
+								fontSize: (theme) => theme.typography.body1,
+							}}
+						>
+							Sell
+						</Button>
+					</Stack>
+				)}
 			</Wrapper>
 		</Box>
 	);
