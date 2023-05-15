@@ -32,6 +32,11 @@ const ColorButton = styled(Button)(() => ({
 	},
 }));
 
+const ModTextField = styled(TextField)`
+	color: white;
+	bordercolor: white;
+`;
+
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
 
@@ -164,7 +169,7 @@ export default function BuySell() {
 						>
 							<Stack width="100%">
 								{textInput.map((input) => (
-									<TextField
+									<ModTextField
 										key={input}
 										id="outlined-basic"
 										label={input}
@@ -175,6 +180,42 @@ export default function BuySell() {
 											style: {
 												color: "white",
 												borderColor: "white",
+											},
+										}}
+										InputLabelProps={{
+											style: {
+												color: "white",
+											},
+										}}
+										variant="outlined"
+										sx={{
+											"& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline":
+												{
+													borderColor: "white",
+												},
+											"&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline":
+												{
+													borderColor: "white",
+												},
+											"& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+												{
+													borderColor: "white",
+												},
+											"& .MuiOutlinedInput-input": {
+												color: "white",
+											},
+											"&:hover .MuiOutlinedInput-input": {
+												color: "white",
+											},
+											"& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input":
+												{
+													color: "white",
+												},
+											"& .MuiInputLabel-outlined": {
+												color: "white",
+											},
+											"&:hover .MuiInputLabel-outlined": {
+												color: "white",
 											},
 										}}
 									/>

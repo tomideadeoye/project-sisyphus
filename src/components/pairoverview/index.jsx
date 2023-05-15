@@ -62,11 +62,31 @@ const SelectPair = ({ pair, handleChange }) => {
 			<Stack direction="row" alignItems="center">
 				<Avatar alt="Remy Sharp" src="/images/logo/pair.svg" width="100%" />
 				<Select
+					disableUnderline
+					variant="standard"
 					labelId="demo-simple-select-label"
 					id="demo-simple-select"
 					value={pair}
 					label="Pair"
 					onChange={handleChange}
+					IconComponent={() => null}
+					sx={{
+						"& .MuiSelect-select": {
+							color: "white",
+						},
+
+						"& .MuiOutlinedInput-root": {
+							"& fieldset": {
+								borderColor: "white",
+							},
+							"&:hover fieldset": {
+								borderColor: "white",
+							},
+							"&.Mui-focused fieldset": {
+								borderColor: "white",
+							},
+						},
+					}}
 				>
 					{appContext.value.tradingPairs?.map((pair) => (
 						<MenuItem key={pair} value={pair}>

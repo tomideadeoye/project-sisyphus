@@ -31,7 +31,6 @@ import {
 	DrawingObjectSelector,
 } from "react-stockcharts/lib/interactive";
 import { last, toObject } from "react-stockcharts/lib/utils";
-
 import { saveInteractiveNodes, getInteractiveNodes } from "./interactiveutils";
 
 class CandlestickChart extends React.Component {
@@ -187,6 +186,7 @@ class CandlestickChart extends React.Component {
 				xAccessor={xAccessor}
 				displayXAccessor={displayXAccessor}
 				xExtents={xExtents}
+				color="white"
 			>
 				<Chart
 					id={1}
@@ -202,27 +202,39 @@ class CandlestickChart extends React.Component {
 						axisAt="bottom"
 						orient="bottom"
 						showTicks={false}
+						// axis color
+						stroke="#FFFFFF"
+						// tick color
+						tickStroke="#FFFFFF"
+						// tick line width
+						innerTickSize={0}
+						// tick line width
+
 						outerTickSize={0}
 					/>
-					<YAxis axisAt="right" orient="right" ticks={5} />
+					<YAxis
+						axisAt="right"
+						orient="right"
+						ticks={5}
+						// color
+						stroke="#FFFFFF"
+						// tick color
+						tickStroke="#FFFFFF"
+						// tick line width
+					/>
 					<MouseCoordinateY
 						at="right"
 						orient="right"
 						displayFormat={format(".2f")}
+						color="#FFFFFF"
 					/>
 
 					<CandlestickSeries />
-					<LineSeries yAccessor={ema26.accessor()} stroke={ema26.stroke()} />
-					<LineSeries yAccessor={ema12.accessor()} stroke={ema12.stroke()} />
+					<LineSeries yAccessor={ema26.accessor()} stroke={"white"} />
+					<LineSeries yAccessor={ema12.accessor()} stroke={"white"} />
 
-					<CurrentCoordinate
-						yAccessor={ema26.accessor()}
-						fill={ema26.stroke()}
-					/>
-					<CurrentCoordinate
-						yAccessor={ema12.accessor()}
-						fill={ema12.stroke()}
-					/>
+					<CurrentCoordinate yAccessor={ema26.accessor()} fill={"white"} />
+					<CurrentCoordinate yAccessor={ema12.accessor()} fill={"white"} />
 					<EdgeIndicator
 						itemType="last"
 						orient="right"

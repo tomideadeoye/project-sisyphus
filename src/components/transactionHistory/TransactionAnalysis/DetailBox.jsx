@@ -9,7 +9,7 @@ export default function DetailBox({ channel }) {
 			justifyContent="center"
 			alignItems="center"
 			sx={{
-				height: "60vh",
+				height: { md: "100%", lg: "60vh" },
 			}}
 		>
 			<Typography variant="h5">{channel}</Typography>

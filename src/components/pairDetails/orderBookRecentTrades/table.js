@@ -14,8 +14,7 @@ function createData(price, amount, total) {
 }
 
 const rowHeading = ["Price\n(USDT)", "Amount\n(BTC)", "Total"];
-
-export default function DataTable({ query }) {
+export default function DataTable({ query, color }) {
 	const data = useContext(AppContext)?.value.historicals;
 
 	const rows = [];
@@ -54,6 +53,7 @@ export default function DataTable({ query }) {
 							sx={{
 								"&:last-child td, &:last-child th": { border: 0 },
 								lineHeight: "0.2",
+								backgroundColor: color,
 							}}
 						>
 							<TableCell

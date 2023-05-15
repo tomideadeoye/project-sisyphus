@@ -54,13 +54,7 @@ const ChartComponent = () => {
 		return <div>Loading...</div>;
 	}
 	return (
-		<Box
-			width={{
-				lg: "70%",
-				md: "100%",
-			}}
-		>
-			{" "}
+		<Box width="100%">
 			<Wrapper>{data && <Chart data={data} />}</Wrapper>
 		</Box>
 	);

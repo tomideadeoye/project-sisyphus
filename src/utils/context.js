@@ -6,13 +6,12 @@ import axios from "axios";
 export const AppContext = createContext();
 const BASE_URL = "https://api.binance.com";
 
-// create a provider component
 export const AppContextProvider = ({ children }) => {
 	const [value, setValue] = useState({
 		tradingPairs: ["BTCUSDT"],
 		currentPair: {
 			symbol: "BTCUSDT",
-			historicals: [],
+			historicals: null,
 		},
 	});
 
@@ -37,7 +36,7 @@ export const AppContextProvider = ({ children }) => {
 	const endTime = Date.now(); // end time in milliseconds since epoch
 	useMemo(() => {
 		const getHistoricals = async () => {
-			const historicals = `${BASE_URL}/api/v3/klines?symbol=${symbol}&interval=${interval}&startTime=${startTime}&endTime=${endTime}`;
+			const historicals = `${BASE_URL}/api/v3/klines?symbol=${symbol}&interval=${interval}&startTime=${startTime}`;
 			const response = await axios.get(historicals);
 			setValue((prev) => ({
 				...prev,

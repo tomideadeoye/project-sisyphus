@@ -3,6 +3,7 @@ import { Grid, Stack } from "@mui/material";
 import ChartComponent from "./chart";
 import OrderBookRecentTrades from "./orderBookRecentTrades";
 import BuySell from "./BuySell";
+import { GoogleCandleStick } from "../googleChart";
 
 export function PairDetails() {
 	return (
@@ -12,7 +13,7 @@ export function PairDetails() {
 			sx={{ width: "100%", height: "100%", padding: "0px 10px" }}
 			justifyContent="space-between"
 		>
-			<ChartComponent />
+			<GoogleCandleStick />
 			<OrderBookRecentTrades />
 			<BuySell />
 		</Stack>
