@@ -13,11 +13,19 @@ export const AppContextProvider = ({ children }) => {
 			symbol: "BTCUSDT",
 			historicals: null,
 		},
+		interval: {
+			interval: "1h",
+			startTime: "1d",
+			intervalOptions: ["1m", "1h", "2h", "4h", "1d", "1w", "1M"],
+			startTimeOptions: ["1h", "1d", "1w", "1M", "1y", "5y", "max"],
+		},
 	});
+	console.log("value", value.interval.startTime);
 
 	async function getTradingPairs() {
-		const response = await axios.get(`${BASE_URL}/api/v3/exchangeInfo`);
-		const tradingPairs = response.data.symbols.map((symbol) => symbol.symbol);
+		const response = await axios.get(`${BASE_URL}/api/v3/ticker/24hr`);
+		const tradingPairs = response?.data;
+		console.log("tradingPairs", tradingPairs);
 		return tradingPairs;
 	}
 
@@ -30,13 +38,33 @@ export const AppContextProvider = ({ children }) => {
 		return response.data;
 	}
 	const symbol = value.currentPair.symbol; // trading pair
-	const interval = "1d"; // 1 day interval
-	const startTime = "1609459200000"; // start time in milliseconds since epoch
+
+	const startTime = () => {
+		const now = new Date();
+		if (value.interval.startTime == "1h") {
+			return now.setHours(now.getHours() - 1);
+		} else if (value.interval.startTime == "1d") {
+			return now.setHours(now.getHours() - 24);
+		} else if (value.interval.startTime == "1w") {
+			return now.setHours(now.getHours() - 168);
+		} else if (value.interval.startTime == "1M") {
+			return now.setHours(now.getHours() - 720);
+		} else if (value.interval.startTime == "1y") {
+			return now.setHours(now.getHours() - 8760);
+		} else if (value.interval.startTime == "5y") {
+			return now.setHours(now.getHours() - 43800);
+		} else if (value.interval.startTime == "max") {
+			return "";
+		}
+	};
+
 	// now to epoch
 	const endTime = Date.now(); // end time in milliseconds since epoch
 	useMemo(() => {
 		const getHistoricals = async () => {
-			const historicals = `${BASE_URL}/api/v3/klines?symbol=${symbol}&interval=${interval}&startTime=${startTime}`;
+			const historicals = `${BASE_URL}/api/v3/klines?symbol=${symbol}&interval=${
+				value.interval.interval
+			}&startTime=${startTime()}`;
 			const response = await axios.get(historicals);
 			setValue((prev) => ({
 				...prev,
@@ -44,7 +72,7 @@ export const AppContextProvider = ({ children }) => {
 			}));
 		};
 		getHistoricals();
-	}, [symbol]);
+	}, [symbol, value]);
 
 	useEffect(() => {
 		const getPairs = async () => {

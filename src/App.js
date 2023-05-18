@@ -5,7 +5,6 @@ import Navigation from "./components/navigation";
 import { PairOverview } from "./components/pairoverview";
 import { PairDetails } from "./components/pairDetails";
 import { TransactionHistory } from "./components/transactionHistory";
-import ChartComponent from "./components/pairDetails/chart";
 
 const useStyles = makeStyles(() => ({
 	container: {
@@ -24,7 +23,6 @@ const App = () => {
 			<PairOverview />
 			<PairDetails />
 			<TransactionHistory />
-			<ChartComponent />
 		</Stack>
 	);
 };

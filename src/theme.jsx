@@ -8,6 +8,8 @@ const theme = createTheme({
 			background: "#20252B",
 			border: "#262932",
 			accent1: "#353945",
+			contrastText: "#fff",
+			hover: "#353945",
 		},
 		secondary: {
 			main: "#19857b",

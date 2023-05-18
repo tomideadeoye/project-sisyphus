@@ -1,9 +1,8 @@
 import React from "react";
 import { Grid, Stack } from "@mui/material";
-import ChartComponent from "./chart";
 import OrderBookRecentTrades from "./orderBookRecentTrades";
 import BuySell from "./BuySell";
-import { GoogleCandleStick } from "../googleChart";
+import ApexChart from "../apexChart";
 
 export function PairDetails() {
 	return (
@@ -13,7 +12,7 @@ export function PairDetails() {
 			sx={{ width: "100%", height: "100%", padding: "0px 10px" }}
 			justifyContent="space-between"
 		>
-			<GoogleCandleStick />
+			<ApexChart />
 			<OrderBookRecentTrades />
 			<BuySell />
 		</Stack>
