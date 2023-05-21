@@ -97,8 +97,9 @@ export default function BasicPopover() {
 						/>
 					</Stack>
 					<Stack>
-						{pairs?.map((pair) => (
+						{pairs?.map((pair, index) => (
 							<Stack
+								key={index}
 								direction="row"
 								justifyContent="space-between"
 								onClick={() => handleChange(pair)}

@@ -13,14 +13,14 @@ function createData(price, amount, total) {
 	return { price, amount, total };
 }
 
-const rowHeading = ["Price\n(USDT)", "Amount\n(BTC)", "Total"];
+const rowHeading = ["Price\n", "Amount\n", "Total"];
 export default function DataTable({ query, color }) {
 	const data = useContext(AppContext)?.value.historicals;
 
 	const rows = [];
 
 	data?.forEach((element) => {
-		rows.push(createData(element[1], element[9], element[5]));
+		rows.push(createData(element[4], element[8], element[5]));
 	});
 
 	return (
@@ -47,13 +47,19 @@ export default function DataTable({ query, color }) {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{rows.slice(0, query).map((row) => (
+					{rows?.slice(0, query).map((row) => (
 						<TableRow
 							key={row.name}
 							sx={{
 								"&:last-child td, &:last-child th": { border: 0 },
 								lineHeight: "0.2",
-								backgroundColor: color,
+								backgroundColor: {
+									// index of row.price is greater than the index of the previous row.price then color is green else red
+									backgroundColor:
+										row.price > rows[rows.indexOf(row) - 1]?.price
+											? "green"
+											: "red",
+								},
 							}}
 						>
 							<TableCell

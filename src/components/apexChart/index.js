@@ -41,6 +41,33 @@ const ApexChart = () => {
 			toolbar: {
 				autoSelected: "pan",
 				show: true,
+				tools: {
+					download: true,
+					selection: true,
+					zoom: true,
+					zoomin: true,
+					zoomout: true,
+					pan: true,
+					reset: true,
+				},
+
+				tools: {
+					download: true,
+					selection: true,
+					zoom: true,
+					zoomin: true,
+					zoomout: true,
+					pan: true,
+					reset: true,
+				},
+				itemMargin: {
+					horizontal: 8,
+					vertical: 8,
+				},
+			},
+			theme: {
+				mode: "dark",
+				palette: "palette1",
 			},
 		},
 
@@ -59,23 +86,14 @@ const ApexChart = () => {
 				title: "dan",
 			},
 		},
-		// tooltip: {
-		// 	custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-		// 		return (
-		// 			'<div class="arrow_box">' +
-		// 			"<span>" +
-		// 			//the whole series is offered as a prop
-		// 			//plus the relevant series in the data if there are more than one
-		// 			//plus the index of where this sits on the x axis
-		// 			//plus a global object w to extract other chart data.
-		// 			//apexcharts.js/src/modules/settings/Globals.js
-		// 			//usw W for better access rather than series[seriesindex][datapointindex]
-		// 			JSON.stringify(w.globals.categoryLabels[dataPointIndex]) +
-		// 			"</span>" +
-		// 			"</div>"
-		// 		);
-		// 	},
-		// },
+		tooltip: {
+			theme: "dark", // Use a dark theme for the tooltip
+			style: {
+				fontSize: "8px",
+				fontFamily: "Arial",
+				color: "#ffffff", // Change the text color to white
+			},
+		},
 	};
 
 	const optionsBar = {

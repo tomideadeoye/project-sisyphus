@@ -51,7 +51,7 @@ function a11yProps(index) {
 export default function OrderBookRecentTrades() {
 	const theme = useTheme();
 	const [value, setValue] = React.useState(0);
-	const [query, setQuery] = useState(5);
+	const [query, setQuery] = useState(10);
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
@@ -136,7 +136,6 @@ export default function OrderBookRecentTrades() {
 				>
 					<TabPanel value={value} index={0} dir={theme.direction}>
 						<DataTable query={query} color="green" />
-						<DataTable query={query} color="red" />
 					</TabPanel>
 					<TabPanel value={value} index={1} dir={theme.direction}>
 						No recent trades

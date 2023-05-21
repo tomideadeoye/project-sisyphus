@@ -78,16 +78,23 @@ export default function Navigation() {
 						padding: "0.5rem 1rem",
 						borderRadius: "0.7rem",
 					}}
+					// navigate to linkedin on click
+					onClick={() =>
+						window.open(
+							"https://www.linkedin.com/in/tomide-adeoye-828604129/",
+							"_blank"
+						)
+					}
 				>
 					<Avatar
-						alt="Remy Sharp"
-						src="/images/avatarimage.png"
+						alt="Tomide Adeoye"
+						src="/images/tompic.jpg"
 						sx={{
 							background: "linear-gradient(0deg, #DF9090, #DF9090)",
 						}}
 					/>
 					<Typography variant="body1" component="div">
-						Olakunle Te...
+						Tomide Adeoye...
 					</Typography>
 					<KeyboardArrowRightIcon />
 				</Stack>

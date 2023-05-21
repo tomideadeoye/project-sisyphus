@@ -6,6 +6,8 @@ export default function ChartConfig() {
 	const appContext = useContext(AppContext);
 	const timeOptions = appContext.value.interval.startTimeOptions;
 	const intervalOptions = appContext.value.interval.intervalOptions;
+	const startTime = appContext.value.interval.startTime;
+	const interval = appContext.value.interval.interval;
 
 	const handleTime = (e) => {
 		const time = e.currentTarget.value;
@@ -30,7 +32,7 @@ export default function ChartConfig() {
 	};
 
 	return (
-		<Stack>
+		<Stack spacing={2}>
 			<Stack
 				direction="row"
 				alignItems="center"
@@ -60,7 +62,14 @@ export default function ChartConfig() {
 					<Button variant="text">Time</Button>
 					{timeOptions?.map((timeOption) => {
 						return (
-							<Button variant="text" onClick={handleTime} value={timeOption}>
+							<Button
+								variant="text"
+								onClick={handleTime}
+								value={timeOption}
+								sx={{
+									background: startTime == timeOption && "grey",
+								}}
+							>
 								{timeOption}
 							</Button>
 						);
@@ -83,6 +92,7 @@ export default function ChartConfig() {
 					<Box component="img" src="/images/icons/redo.png" />
 				</Stack>
 			</Stack>
+
 			<Stack
 				direction="row"
 				sx={{
@@ -99,6 +109,9 @@ export default function ChartConfig() {
 							variant="text"
 							onClick={handleInterval}
 							value={intervalOption}
+							sx={{
+								background: interval == intervalOption && "grey",
+							}}
 						>
 							{intervalOption}
 						</Button>

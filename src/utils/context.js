@@ -20,7 +20,8 @@ export const AppContextProvider = ({ children }) => {
 			startTimeOptions: ["1h", "1d", "1w", "1M", "1y", "5y", "max"],
 		},
 	});
-	console.log("value", value.interval.startTime);
+	console.log("value", value);
+
 
 	async function getTradingPairs() {
 		const response = await axios.get(`${BASE_URL}/api/v3/ticker/24hr`);
@@ -72,7 +73,7 @@ export const AppContextProvider = ({ children }) => {
 			}));
 		};
 		getHistoricals();
-	}, [symbol, value]);
+	}, [symbol, value.interval.startTime, value.interval.interval]);
 
 	useEffect(() => {
 		const getPairs = async () => {

@@ -101,6 +101,8 @@ export default function BuySell() {
 					md: "100%",
 					lg: "20%",
 				},
+				height: "100%",
+				background: (theme) => theme.palette.primary.background,
 			}}
 		>
 			<Wrapper>
