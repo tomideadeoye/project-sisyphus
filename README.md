@@ -1,5 +1,6 @@
-# Sisyphus by TOMIDE
+# Sisyphus - React Candle-stick Project
 
+Integrates Binance kline apis for historical market data.
 
 
 https://github.com/tomideadeoye/project-sisyphus/assets/55337742/b4bbc74e-9729-4285-bf09-e1d830ed323e
