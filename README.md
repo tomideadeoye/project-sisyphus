@@ -1,7 +1,6 @@
 # Sisyphus by TOMIDE
 
 
-https://user-images.githubusercontent.com/55337742/235377895-5d219784-bd2a-47fc-8fa6-d349ce06fb22.mp4
 
 
 
