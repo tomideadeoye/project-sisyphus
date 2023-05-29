@@ -9,7 +9,7 @@ https://github.com/tomideadeoye/project-sisyphus/assets/55337742/b4bbc74e-9729-4
 
 
 Tomide Adeoye. \
-M: +234 818 192 7251 \
+M: +234 818 192 7251 
 
 Email: tomideadeoye@gmail.com \
 Website: https://tomide-adeoye.netlify.app \
