@@ -1,21 +1,19 @@
 # Sisyphus by TOMIDE
 
+https://github.com/tomideadeoye/project-sisyphus/blob/main/candlestickchart-tomideadeoye.mp4
 
 
+Tomide Adeoye. \
+M: +234 818 192 7251 \
+Email: tomideadeoye@gmail.com \
+Website: https://tomide-adeoye.netlify.app \
+Twitter: https://twitter.com/_Tomide \
+GitHub: https://github.com/tomideadeoye \
+Medium: https://medium.com/@tomideadeoye/lists \
+LinkedIn: https://www.linkedin.com/in/tomide-adeoye-828604129 \
+YouTube: https://www.youtube.com/channel/UCVQDiC3kbc6lT1JNrQGicAg \
 
-
-
-Tomide Adeoye.
-M: +234 818 192 7251
-Email: tomideadeoye@gmail.com
-Website: https://tomide-adeoye.netlify.app
-Twitter: https://twitter.com/_Tomide
-GitHub: https://github.com/tomideadeoye
-Medium: https://medium.com/@tomideadeoye/lists
-LinkedIn: https://www.linkedin.com/in/tomide-adeoye-828604129
-YouTube: https://www.youtube.com/channel/UCVQDiC3kbc6lT1JNrQGicAg
-
-SOME PROJECT LINKS 🧑🏿‍💻:
-Juice Spend: https://tomidejuiceui.netlify.app/ (React JS)
-Verify Pro: https://verifypro.netlify.app/ (React JS, Firebase)
-Unilever Compliance: https://unicomreport.netlify.app/ (React JS)
+SOME PROJECT LINKS 🧑🏿‍💻: \
+Juice Spend: https://tomidejuiceui.netlify.app/ (React JS) \
+Verify Pro: https://verifypro.netlify.app/ (React JS, Firebase) \
+Unilever Compliance: https://unicomreport.netlify.app/ (React JS) \
