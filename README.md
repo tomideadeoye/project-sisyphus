@@ -1,6 +1,10 @@
 # Sisyphus by TOMIDE
 
-https://github.com/tomideadeoye/project-sisyphus/blob/main/candlestickchart-tomideadeoye.mp4
+
+
+https://github.com/tomideadeoye/project-sisyphus/assets/55337742/b4bbc74e-9729-4285-bf09-e1d830ed323e
+
+
 
 
 Tomide Adeoye. \
