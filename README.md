@@ -12,7 +12,7 @@ Tomide Adeoye. \
 M: +234 818 192 7251 
 
 Email: tomideadeoye@gmail.com \
-Website: merislabs.com \
+Website: https://merislabs.com \
 Twitter: https://twitter.com/_Tomide \
 GitHub: https://github.com/tomideadeoye \
 Medium: https://medium.com/@tomideadeoye/lists \
